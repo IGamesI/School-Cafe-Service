@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+
+:root {
+  --primary-text-color: black;
+  --primary-text-color-reverse: white;
+  --secondry-text-color: gray;
+  --food-color-1: #eae6ff;
+  --button-color: rgb(223, 65, 65);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-family: "Lalezar";
+  color: var(--primary-text-color);
+  text-align: center;
+}
+
+.header .title {
+  font-size: 30px;
+}
+
+.header .text {
+  margin-top: -30px;
+  color: var(--secondry-text-color);
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+
+  margin-top: 20px;
+}
+
+.item {
+  width: 40vw;
+
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.item-clicked {
+  -webkit-animation-name: foodClickAnim;
+  animation-name: foodClickAnim;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+@keyframes foodClickAnim {
+    from {
+    background-color: white;
+  }
+  to {
+    background-color: gray;
+  }
+}
+
+.item .container {
+  background-color: var(--food-color-1);
+  height: auto;
+  border-radius: 30px;
+  aspect-ratio: 1;
+  height: 100;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+}
+
+.item .container .add-to-cart {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  padding: 10px;
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--button-color);
+}
+
+.item .container .add-to-cart p {
+  color: var(--primary-text-color-reverse);
+  text-align: center;
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.item .container .add-to-cart img {
+  width: 35px;
+  color: white;
+  margin-bottom: -5px;
+}
+
+.item .bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
