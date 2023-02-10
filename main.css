@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 
 :root {
+  --secondry-background-color: #eef6fd;
   --primary-text-color: black;
   --primary-text-color-reverse: white;
   --secondry-text-color: gray;
   --food-color-1: #eae6ff;
   --button-color: rgb(223, 65, 65);
+  --button-color-2: #8a86e2;
 }
 
+/* General */
 body {
   display: flex;
   flex-direction: column;
@@ -20,6 +23,12 @@ p {
   text-align: center;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header .title {
   font-size: 30px;
 }
@@ -29,6 +38,14 @@ p {
   color: var(--secondry-text-color);
 }
 
+.header img {
+  width: 80%;
+  height: 80%;
+
+  margin-top: 30px;
+}
+
+/* Main Page */
 .items {
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +61,7 @@ p {
   border: none;
   outline: none;
   background-color: white;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 5px;
 }
 
@@ -67,7 +84,7 @@ p {
 .item .container {
   background-color: var(--food-color-1);
   height: auto;
-  border-radius: 30px;
+  border-radius: 10px;
   aspect-ratio: 1;
   height: 100;
 
@@ -86,7 +103,7 @@ p {
 
   border: none;
   outline: none;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 10px;
   width: 55px;
   height: 55px;
@@ -114,4 +131,108 @@ p {
 .item .bottom {
   display: flex;
   justify-content: space-evenly;
+}
+
+/* Login Page */
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 70vw;
+}
+
+#login input[type="text"],
+#login input[type="password"],
+#login input[type="submit"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  padding-right: 15px;
+
+  border-radius: 10px;
+  font-size: 18px;
+  width: 100%;
+
+  font-family: "Lalezar";
+  background-color: var(--secondry-background-color);
+  filter: drop-shadow(0px 1px 1px #aaa);
+
+  outline: none;
+  border: none;
+}
+
+#login input[type="text"]:focus,
+#login input[type="password"]:focus {
+  border-width: 2px;
+  filter: drop-shadow(0px 1px 1px var(--food-color-1));
+}
+
+#login input[type="submit"] {
+  background-color: var(--button-color);
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: calc(100% + 25px);
+}
+
+/* Transaction Page */
+.transactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.transaction-card {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  background-color: var(--secondry-background-color);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  filter: drop-shadow(0px 1px 1px #aaa);
+}
+
+.transaction-card p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.transactions .top {
+  display: flex;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.transactions .top .right,
+.transactions .top .left {
+  width: 50%;
+}
+
+.transactions .top .right p {
+  text-align: right;
+}
+
+.transactions .top .left p {
+  text-align: left;
+}
+
+.transactions .middle {
+  padding-right: 5px;
+}
+
+.transactions .middle p {
+  text-align: right;
+}
+
+.transactions .bottom {
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+
+.transactions .bottom p {
+  text-align: left;
 }
